@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'files/bootstrap.min.css' %}">
+    <script src="{% static 'files/bootstrap.min.js' %}"></script>
+    <script src="{% static 'files/jquery.min.js' %}"></script>
+    <script src="{% static 'files/popper.min.js' %}"></script>
+    <title>{{title}} Product {{pk}} </title>
+</head>
+<body>
+    <div class="container">
+        <h4>Welcome To User Table</h4>
+        {% if my %}
+          <h4>Welcome To User Table</h4>
+          <table class="table table-hover table-inverse table-responsive">
+              <thead class="thead-inverse">
+                  <tr>
+                      <th>Serial</th>
+                      <th>User</th>
+                      <th>Age</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    {% for md in my %}
+                      <tr>
+                          <td scope="row"> {{forloop.counter}} </td>
+                          <td>{{ md.name }}</td>
+                          <td>{{ md.age }}</td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+          </table>
+        {% endif %}
+          
+    </div>
+    
+</body>
+</html>

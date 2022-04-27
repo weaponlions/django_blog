@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'files/bootstrap.min.css' %}">
+    <script src="{% static 'files/bootstrap.min.js' %}"></script>
+    <script src="{% static 'files/jquery.min.js' %}"></script>
+    <script src="{% static 'files/popper.min.js' %}"></script>
+    <title>{{title}}</title>
+</head>
+<body>
+    <div class="container w-50">
+        <h1> {{heading}} </h1>
+
+        <br>
+
+        <div class="container">
+            <a href="{% url 'profile' %}" class="btn btn-primary m-2">PROFILE</a>
+            {% if perms.app2.delete_mymodels %}
+            <a href="{% url 'about' %}" class="btn btn-primary m-2">ABOUT</a>
+              
+            {% endif %}
+            <a href="{% url 'userlogout' %}" class="btn btn-primary m-2">LOGOUT</a>
+            <a href="{% url 'userlogin' %}" class="btn btn-primary m-2">LOGIN</a>
+            <a href="{% url 'usercreation' %}" class="btn btn-primary m-2">SIGNUP</a>
+            <a href="{% url 'userchangepassword' %}" class="btn btn-primary m-2">CHANGE PASSWORD</a>
+            <a href="{% url 'usersetpassword' %}" class="btn btn-primary m-2">SET PASSWORD</a>
+        </div>
+    </div>
+    
+</body>
+</html>
